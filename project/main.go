@@ -9,5 +9,8 @@ import (
 func main() {
 	controllers.InitDatabase()
 	r := gin.Default()
+	r.GET("/books", controllers.FindBooks)
+	r.POST("/books", controllers.CreateBooks)
+	r.DELETE("/books/:id", controllers.DeleteBook)
 	r.Run()
 }
